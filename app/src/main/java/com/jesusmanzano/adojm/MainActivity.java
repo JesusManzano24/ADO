@@ -8,19 +8,20 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.Toast;
+
+import androidx.appcompat.app.AppCompatActivity;
+
 import com.bumptech.glide.Glide;
 
-import androidx.activity.EdgeToEdge;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.graphics.Insets;
-import androidx.core.view.ViewCompat;
-import androidx.core.view.WindowInsetsCompat;
+
+
 
 public class MainActivity extends AppCompatActivity {
     Button inicio;
     Button registro;
     EditText user;
     EditText password;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -37,6 +38,7 @@ public class MainActivity extends AppCompatActivity {
         Glide.with(this)
                 .load(R.drawable.ado) // Cambia esto al recurso de tu GIF
                 .into(logoImageView);
+
         // Listener para el botón de registro
         registro.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -50,7 +52,6 @@ public class MainActivity extends AppCompatActivity {
         inicio.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                // Obtener las credenciales ingresadas
                 String usuarioIngresado = user.getText().toString();
                 String contraseñaIngresada = password.getText().toString();
 
@@ -60,7 +61,7 @@ public class MainActivity extends AppCompatActivity {
                 String contraseñaGuardada = prefs.getString("contraseña", "");
 
                 // Si las credenciales coinciden, iniciar nueva Activity
-                if(usuarioIngresado.equals(usuarioGuardado) && contraseñaIngresada.equals(contraseñaGuardada)) {
+                if (usuarioIngresado.equals(usuarioGuardado) && contraseñaIngresada.equals(contraseñaGuardada)) {
                     Intent intent = new Intent(MainActivity.this, MainActivity3.class); // Reemplaza 'TerceraActivity' con el nombre de la clase de tu tercera pantalla
                     startActivity(intent);
                 } else {
