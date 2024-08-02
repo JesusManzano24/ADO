@@ -48,12 +48,14 @@
 
         <Button
             android:id="@+id/btn_fecha"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Seleccionar Fecha"
-            android:backgroundTint="#22c55e"
+            android:fontFamily="sans-serif-black"
+            android:backgroundTint="#CC33FF"
             android:textColor="@color/white"
-            android:layout_marginTop="58dp" />
+            android:layout_marginStart="100dp"
+            android:layout_marginTop="110dp" />
 
         <EditText
             android:id="@+id/et_hora"
@@ -63,42 +65,46 @@
             android:focusable="false"
             android:textColor="@color/black"
             android:textColorHint="@color/white"
-            android:layout_marginTop="-96dp" />
+            android:layout_marginTop="-146dp" />
 
         <Button
             android:id="@+id/btn_hora"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Seleccionar Hora"
-            android:backgroundTint="#22c55e"
+            android:backgroundTint="#CC33FF"
             android:textColor="@color/white"
-            android:layout_marginTop="8dp" />
+            android:layout_marginStart="100dp"
+            android:layout_marginTop="110dp" />
 
         <TextView
             android:id="@+id/tv_total"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
+            android:layout_marginTop="-146dp"
             android:textColor="@color/black"
             android:text="Total: $0.00" />
 
         <Button
             android:id="@+id/btn_pagar"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Pagar"
-            android:backgroundTint="#22c55e"
+            android:backgroundTint="#CC33FF"
             android:textColor="@color/white"
-            android:layout_marginTop="16dp" />
+            android:layout_marginStart="100dp"
+            android:fontFamily="sans-serif-black"
+            android:layout_marginTop="126dp" />
 
         <Button
             android:id="@+id/btn_regresar"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Regresar al Menú"
+            android:layout_width="wrap_content"
+            android:layout_height="49dp"
+            android:layout_marginStart="100dp"
+            android:layout_marginTop="8dp"
             android:backgroundTint="#f59e0b"
-            android:textColor="@color/white"
-            android:layout_marginTop="8dp" />
+            android:text="Regresar al Menú"
+            android:textColor="@color/white" />
     </LinearLayout>
 
 </RelativeLayout>
