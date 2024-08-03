@@ -9,14 +9,14 @@
     tools:context=".MainActivity">
 
     <TextView
-        android:id="@+id/usuario"
+        android:id="@+id/textoSaludo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="-600dp"
         android:fontFamily="sans-serif-black"
-        android:textSize="20sp"
-        android:text="Comprar Boletos"
-        android:textColor="#00FF7F"
+        android:textSize="30sp"
+        android:text="Hola, Usuario"
+        android:textColor="#FF9900"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -38,11 +38,10 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/button1"
+        android:id="@+id/Comprar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Comprar"
-        android:textColor="#00FF7F"
         app:layout_constraintTop_toBottomOf="@id/helloTextView"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
@@ -62,13 +61,12 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/button2"
+        android:id="@+id/Cambiar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Cambiar"
-        android:textColor="#00FF7F"
         android:layout_marginTop="40dp"
-        app:layout_constraintTop_toBottomOf="@id/button1"
+        app:layout_constraintTop_toBottomOf="@id/Comprar"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
 
@@ -87,12 +85,12 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/button3"
+        android:id="@+id/consultar"
         android:layout_marginTop="50dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Consultar"
-        app:layout_constraintTop_toBottomOf="@id/button2"
+        app:layout_constraintTop_toBottomOf="@id/Cambiar"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
     <TextView
@@ -110,22 +108,33 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/button4"
+        android:id="@+id/Inicio"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="248dp"
-        android:text="Button 4"
+        android:text="Iniciar Sesión"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.501"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/button2" />
+        app:layout_constraintTop_toBottomOf="@id/Cambiar" />
+
+    <Button
+        android:id="@+id/Eliminar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="148dp"
+        android:text="Eliminar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.501"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/Cambiar" />
 
     <TextView
         android:id="@+id/helloTextView5"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="340dp"
-        android:text="Camara"
+        android:text="Iniciar Sesion"
         android:fontFamily="sans-serif-black"
         android:textSize="20sp"
         android:textColor="#FF33FF"
@@ -134,16 +143,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <Button
-        android:id="@+id/button5"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="148dp"
-        android:text="Button 5"
-        android:textColor="#00FF7F"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.501"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/button2" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

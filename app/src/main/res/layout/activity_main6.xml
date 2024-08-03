@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity6">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/fondo"
+            android:padding="16dp">
+
+            <TextView
+                android:id="@+id/title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Consultar Boleto"
+                android:textSize="24sp"
+                android:fontFamily="sans-serif-black"
+                android:textColor="#FF99FF"
+                android:layout_centerHorizontal="true"
+                android:paddingBottom="16dp" />
+
+            <EditText
+                android:id="@+id/idboleto"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="number"
+                android:textColor="@color/white"
+                android:textColorHint="@color/white"
+                android:hint="ID Del Boleto"
+                android:layout_below="@id/title"
+                android:layout_marginTop="16dp" />
+
+            <ImageView
+                android:id="@+id/img"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_below="@id/idboleto"
+                android:layout_marginTop="16dp" />
+
+            <Button
+                android:id="@+id/consultar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:backgroundTint="#CC33FF"
+                android:textColor="@color/white"
+                android:text="Consultar"
+                android:layout_below="@id/img"
+                android:layout_marginTop="16dp"
+                android:layout_alignParentStart="true" />
+
+            <Button
+                android:id="@+id/Todo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:backgroundTint="#CC33FF"
+                android:textColor="@color/white"
+                android:text="Consultar Todo"
+                android:layout_below="@id/img"
+                android:layout_marginTop="16dp"
+                android:layout_toEndOf="@id/consultar"
+                android:layout_marginStart="16dp" />
+
+            <TextView
+                android:id="@+id/Existentes"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/white"
+                android:padding="16dp"
+                android:layout_below="@id/Todo"
+                android:layout_marginTop="16dp" />
+
+        </RelativeLayout>
+    </ScrollView>
+
+    <Button
+        android:id="@+id/regresar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:backgroundTint="#CC33FF"
+        android:textColor="@color/white"
+        android:text="Regresar al Menú"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="16dp"
+        android:padding="16dp" />
+</RelativeLayout>
+
