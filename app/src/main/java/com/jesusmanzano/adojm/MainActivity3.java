@@ -21,7 +21,7 @@ public class MainActivity3 extends AppCompatActivity {
         Button button4 = findViewById(R.id.button4);
         Button button5 = findViewById(R.id.button5);
 
-        // Asignar acciones a los botones
+
         button1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

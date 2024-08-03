@@ -9,6 +9,7 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.DatePicker;
+import android.widget.ImageView;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.TimePicker;
@@ -31,17 +32,18 @@ public class MainActivity4 extends AppCompatActivity {
     private Spinner selectorOrigen, selectorDestino;
     private Button botonFecha, botonHora, botonPagar, botonRegresar;
     private TextView textoTotal;
+    private ImageView imagenDestino;
     private Calendar calendario;
-    private String[] listaOrigenes = {"Mérida", "Progreso", "Valladolid", "Tizimín", "Ticul"};
+    private String[] listaOrigenes = {"Mérida", "Cancun", "Campeche", "Cuidad de México", "Veracruz"};
     private String[] listaDestinos = {"Celestún", "Izamal", "Tekax", "Motul", "Peto"};
-    private double[][] Precios = {
+    private int[] imagenesDestinos = {R.drawable.celestun, R.drawable.izamal, R.drawable.tekax, R.drawable.motul, R.drawable.peto};
+    private double[][] precios = {
             {110.00, 140.00, 120.00, 165.00, 187.50},
             {125.00, 135.00, 115.00, 150.00, 295.00},
             {230.00, 140.00, 220.00, 140.00, 350.00},
             {240.00, 120.00, 260.00, 130.00, 495.00},
             {150.00, 110.00, 140.00, 210.00, 520.00}
     };
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -50,15 +52,16 @@ public class MainActivity4 extends AppCompatActivity {
 
         usuarioActual = getIntent().getStringExtra("usuario");
 
-        campoFecha = findViewById(R.id.et_fecha);
-        campoHora = findViewById(R.id.et_hora);
+        campoFecha = findViewById(R.id.fecha);
+        campoHora = findViewById(R.id.horatxt);
         selectorOrigen = findViewById(R.id.origen);
         selectorDestino = findViewById(R.id.destino);
-        botonFecha = findViewById(R.id.btn_fecha);
-        botonHora = findViewById(R.id.btn_hora);
-        botonPagar = findViewById(R.id.btn_pagar);
-        botonRegresar = findViewById(R.id.btn_regresar);
-        textoTotal = findViewById(R.id.tv_total);
+        botonFecha = findViewById(R.id.fecha2);
+        botonHora = findViewById(R.id.hora);
+        botonPagar = findViewById(R.id.pagar);
+        botonRegresar = findViewById(R.id.regresar);
+        textoTotal = findViewById(R.id.total);
+        imagenDestino = findViewById(R.id.imagen_destino);
         calendario = Calendar.getInstance();
 
         ArrayAdapter<String> adaptadorOrigen = new ArrayAdapter<>(this, android.R.layout.simple_spinner_item, listaOrigenes);
@@ -90,7 +93,7 @@ public class MainActivity4 extends AppCompatActivity {
             public void onClick(View v) {
                 int posicionOrigen = selectorOrigen.getSelectedItemPosition();
                 int posicionDestino = selectorDestino.getSelectedItemPosition();
-                double total = Precios[posicionOrigen][posicionDestino];
+                double total = precios[posicionOrigen][posicionDestino];
                 String fecha = new SimpleDateFormat("dd-MM-yyyy", Locale.getDefault()).format(calendario.getTime());
                 String hora = new SimpleDateFormat("HH:mm", Locale.getDefault()).format(calendario.getTime());
 
@@ -103,7 +106,7 @@ public class MainActivity4 extends AppCompatActivity {
                     startActivity(intent);
                     finish();
                 } else {
-                    Toast.makeText(MainActivity4.this, "La compra No se Ha Podido realizar Con Exito", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(MainActivity4.this, "La compra no se pudo realizar con éxito", Toast.LENGTH_SHORT).show();
                 }
             }
         });
@@ -142,8 +145,13 @@ public class MainActivity4 extends AppCompatActivity {
     private void calcularTotal() {
         int posicionOrigen = selectorOrigen.getSelectedItemPosition();
         int posicionDestino = selectorDestino.getSelectedItemPosition();
-        double total = Precios[posicionOrigen][posicionDestino];
+        double total = precios[posicionOrigen][posicionDestino];
         textoTotal.setText("Total: $" + total);
+        cambiarImagenDestino(posicionDestino);
+    }
+
+    private void cambiarImagenDestino(int posicionDestino) {
+        imagenDestino.setImageResource(imagenesDestinos[posicionDestino]);
     }
 
     private DatePickerDialog.OnDateSetListener dateSetListener = new DatePickerDialog.OnDateSetListener() {
@@ -165,3 +173,4 @@ public class MainActivity4 extends AppCompatActivity {
         }
     };
 }
+
