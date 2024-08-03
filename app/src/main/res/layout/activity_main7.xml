@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp"
+    android:background="@drawable/fondo"
+    tools:context=".MainActivity7">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="0dp"
+        android:layout_marginStart="60dp"
+        android:text="Eliminar Reserva"
+        android:textSize="30sp"
+        android:fontFamily="sans-serif-black"
+        android:textColor="#FF99FF"/>
+
+    <EditText
+        android:id="@+id/id"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="ID de la reserva"
+        android:layout_marginTop="50dp"
+        android:fontFamily="sans-serif-black"
+        android:textColorHint="@color/white"
+        android:textColor="@color/white"
+        android:inputType="number" />
+
+    <Button
+        android:id="@+id/buscar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:backgroundTint="#CC33FF"
+        android:layout_marginTop="100dp"
+        android:layout_marginStart="100dp"
+        android:fontFamily="sans-serif-black"
+        android:textColor="@color/white"
+        android:text="Buscar Reserva" />
+
+
+
+    <Button
+        android:id="@+id/cancelar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="100dp"
+        android:backgroundTint="#CC33FF"
+        android:fontFamily="sans-serif-black"
+        android:layout_marginTop="150dp"
+        android:textColor="@color/white"
+        android:text="Cancelar Reserva" />
+
+    <Button
+        android:id="@+id/regresar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="sans-serif-black"
+        android:backgroundTint="#CC33FF"
+        android:layout_marginStart="100dp"
+        android:layout_marginTop="200dp"
+        android:textColor="@color/white"
+        android:text="Regresar al Menú" />
+
+    <TextView
+        android:id="@+id/Detalles"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="80dp"
+        android:layout_marginTop="260dp"
+        android:fontFamily="sans-serif-black"
+        android:text="Informacion de la Reserva"
+        android:textSize="20sp"
+        android:textColor="@color/white"/>
+</RelativeLayout>

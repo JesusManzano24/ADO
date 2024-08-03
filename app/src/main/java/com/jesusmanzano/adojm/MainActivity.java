@@ -34,12 +34,10 @@ public class MainActivity extends AppCompatActivity {
         user = findViewById(R.id.user);
         password = findViewById(R.id.password);
 
-        // Cargar y mostrar el GIF usando Glide
         Glide.with(this)
-                .load(R.drawable.ado) // Cambia esto al recurso de tu GIF
+                .load(R.drawable.ado)
                 .into(logoImageView);
 
-        // Listener para el botón de registro
         registro.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -48,24 +46,21 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        // Listener para el botón de inicio
         inicio.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 String usuarioIngresado = user.getText().toString();
                 String contraseñaIngresada = password.getText().toString();
 
-                // Verificar las credenciales
                 SharedPreferences prefs = getSharedPreferences("MisPreferencias", MODE_PRIVATE);
                 String usuarioGuardado = prefs.getString("usuario", "");
                 String contraseñaGuardada = prefs.getString("contraseña", "");
 
-                // Si las credenciales coinciden, iniciar nueva Activity
+
                 if (usuarioIngresado.equals(usuarioGuardado) && contraseñaIngresada.equals(contraseñaGuardada)) {
-                    Intent intent = new Intent(MainActivity.this, MainActivity3.class); // Reemplaza 'TerceraActivity' con el nombre de la clase de tu tercera pantalla
+                    Intent intent = new Intent(MainActivity.this, MainActivity3.class);
                     startActivity(intent);
                 } else {
-                    // Mostrar mensaje de error
                     Toast.makeText(MainActivity.this, "Usuario o contraseña incorrectos", Toast.LENGTH_SHORT).show();
                 }
             }

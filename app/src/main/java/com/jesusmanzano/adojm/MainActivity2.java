@@ -15,29 +15,26 @@ import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
 public class MainActivity2 extends AppCompatActivity {
-    EditText user;
-    EditText password;
-    Button registrar;
-    Button inicio;
+    EditText etUsuario;
+    EditText etContraseña;
+    Button btnRegistrar;
+    Button btnInicio;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main2);
 
+        etUsuario = findViewById(R.id.user);
+        etContraseña = findViewById(R.id.password);
+        btnRegistrar = findViewById(R.id.Registro);
+        btnInicio = findViewById(R.id.Inicio);
 
-        user = (EditText) findViewById(R.id.user);
-        password = (EditText) findViewById(R.id.password);
-        registrar = (Button) findViewById(R.id.Registro);
-        inicio = findViewById(R.id.Inicio);
-
-
-        registrar.setOnClickListener(new View.OnClickListener() {
+        btnRegistrar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
-                String usuario = user.getText().toString();
-                String contraseña = password.getText().toString();
+                String usuario = etUsuario.getText().toString();
+                String contraseña = etContraseña.getText().toString();
 
                 SharedPreferences prefs = getSharedPreferences("MisPreferencias", MODE_PRIVATE);
                 SharedPreferences.Editor editor = prefs.edit();
@@ -46,14 +43,17 @@ public class MainActivity2 extends AppCompatActivity {
                 editor.apply();
 
                 Toast.makeText(MainActivity2.this, "Datos registrados", Toast.LENGTH_SHORT).show();
-            }
 
+                // Reemplaza 'NuevaActivity' con el nombre de la clase de tu nueva pantalla
+                Intent intent = new Intent(MainActivity2.this, MainActivity.class);
+                startActivity(intent);
+            }
         });
-        inicio.setOnClickListener(new View.OnClickListener() {
+
+        btnInicio.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                // Reemplaza 'NuevaActivity' con el nombre de la clase de tu nueva pantalla
-                Intent intent = new Intent(MainActivity2.this,MainActivity.class);
+                Intent intent = new Intent(MainActivity2.this, MainActivity.class);
                 startActivity(intent);
             }
         });

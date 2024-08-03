@@ -25,6 +25,7 @@
             android:layout_height="wrap_content"
             android:hint="ID del Boleto"
             android:fontFamily="sans-serif-black"
+            android:inputType="number"
             android:textColor="@color/white"
             android:textColorHint="@color/white"
             android:layout_marginTop="70dp" />
@@ -60,7 +61,7 @@
         <ImageView
             android:id="@+id/img"
             android:layout_marginStart="100dp"
-            android:layout_marginTop="300dp"
+            android:layout_marginTop="280dp"
             android:layout_width="100dp"
             android:layout_height="100dp"/>
 
@@ -74,7 +75,7 @@
             android:textColor="@color/white"
             android:textColorHint="@color/white"
             android:layout_below="@id/destino"
-            android:layout_marginTop="100dp" />
+            android:layout_marginTop="110dp" />
 
         <Button
             android:id="@+id/fecha"
@@ -85,7 +86,7 @@
             android:fontFamily="sans-serif-black"
             android:layout_marginStart="100dp"
             android:textColor="@color/white"
-            android:layout_marginTop="450dp" />
+            android:layout_marginTop="490dp" />
 
         <EditText
             android:id="@+id/hora"
@@ -96,7 +97,7 @@
             android:fontFamily="sans-serif-black"
             android:textColor="@color/white"
             android:textColorHint="@color/white"
-            android:layout_marginTop="400dp" />
+            android:layout_marginTop="430dp" />
 
         <Button
             android:id="@+id/btn_hora"

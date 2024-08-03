@@ -18,7 +18,7 @@ public class MainActivity3 extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main3);
 
-        // Inicialización de vistas
+
         Button button1 = findViewById(R.id.Comprar);
         Button button2 = findViewById(R.id.Cambiar);
         Button button3 = findViewById(R.id.consultar);
@@ -26,11 +26,11 @@ public class MainActivity3 extends AppCompatActivity {
         Button button5 = findViewById(R.id.Inicio);
         TextView textoSaludo = findViewById(R.id.textoSaludo);
 
-        // Recuperar el nombre del usuario de SharedPreferences
+
         SharedPreferences prefs = getSharedPreferences("MisPreferencias", MODE_PRIVATE);
         String usuario = prefs.getString("usuario", "");
 
-        // Obtener la hora actual
+
         Calendar calendario = Calendar.getInstance();
         int hora = calendario.get(Calendar.HOUR_OF_DAY);
 
@@ -39,18 +39,17 @@ public class MainActivity3 extends AppCompatActivity {
         if (hora >= 6 && hora < 12) {
             saludo = "Buenos días";
         } else if (hora >= 12 && hora < 18) {
-            saludo = "Buenas tardes";
+            saludo = "Buenas Tardes";
         } else {
-            saludo = "Buenas noches";
+            saludo = "Buenas Noches";
         }
 
-        // Mostrar el saludo con el nombre del usuario
+
         textoSaludo.setText(saludo + ", " + usuario);
 
         button1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                // Navegar a la primera actividad (o fragmento)
                 Intent intent = new Intent(MainActivity3.this, MainActivity4.class);
                 intent.putExtra("usuario", usuario);
                 startActivity(intent);
@@ -60,7 +59,6 @@ public class MainActivity3 extends AppCompatActivity {
         button2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                // Navegar a la segunda actividad (o fragmento)
                 Intent intent = new Intent(MainActivity3.this, MainActivity5.class);
                 intent.putExtra("usuario", usuario);
                 startActivity(intent);
@@ -79,7 +77,7 @@ public class MainActivity3 extends AppCompatActivity {
         button4.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(MainActivity3.this, MainActivity4.class);
+                Intent intent = new Intent(MainActivity3.this, MainActivity7.class);
                 intent.putExtra("usuario", usuario);
                 startActivity(intent);
             }
@@ -88,7 +86,7 @@ public class MainActivity3 extends AppCompatActivity {
         button5.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(MainActivity3.this, MainActivity4.class);
+                Intent intent = new Intent(MainActivity3.this, MainActivity.class);
                 intent.putExtra("usuario", usuario);
                 startActivity(intent);
             }
